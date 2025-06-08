@@ -1,7 +1,11 @@
+import Header from "./components/Header";
+import MainPage from "./pages/MainPage";
+
 function App() {
   return (
     <>
-      <div className="text-5xl">test</div>
+      <Header />
+      <MainPage />
     </>
   );
 }
