@@ -1,7 +1,6 @@
-import { useState } from "react";
+import FileUploader from "../components/FileUploader";
 
 const MainPage = () => {
-  const [appearText, setAppearText] = useState(false);
   return (
     <>
       <div className="mx-auto max-w-5xl p-10">
@@ -9,21 +8,7 @@ const MainPage = () => {
           Online EPUB Reader
         </h1>
 
-        <div className="mt-10 border-2 border-dashed p-5">
-          <p className="text-center">
-            Ready to dive into your next book? Click this box or drag and drop
-            your .epub file right here to get started.
-          </p>
-
-          <button
-            onClick={() => setAppearText((appearText) => !appearText)}
-            className="hover:bg-background mx-auto mt-5 block border-2 px-4 py-2 hover:cursor-pointer"
-          >
-            Choose an EPUB file
-          </button>
-
-          <div className="text-center"> {appearText ? "TEST" : ""}</div>
-        </div>
+        <FileUploader />
 
         <div className="mt-10">
           <h2 className="text-3xl font-extrabold">Getting Started is Easy</h2>
