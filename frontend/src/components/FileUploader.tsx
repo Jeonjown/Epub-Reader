@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import EpubReader from "../pages/EpubReader";
 
 const FileUploader = () => {
-  const [fileName, setFileName] = useState("");
+  const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const FileUploader = () => {
         return;
       }
 
-      setFileName(file.name);
+      setFile(file);
       setIsDragging(false);
     };
 
@@ -41,6 +42,8 @@ const FileUploader = () => {
   return (
     <>
       <div>
+        {file && <EpubReader file={file} />}
+
         <div
           className={`${isDragging ? "border-blue-500" : "border-gray-300"} mt-10 border-2 border-dashed p-5`}
         >
@@ -63,13 +66,14 @@ const FileUploader = () => {
             const file = e.target.files?.[0];
 
             if (file) {
-              setFileName(file.name);
+              setFile(file);
+              console.log(file);
             }
           }}
           className="hidden"
           id="fileInput"
         />
-        <p className="mt-2 text-sm text-gray-500">{fileName}</p>
+        <p className="mt-2 text-sm text-gray-500">{file?.name}</p>
       </div>
     </>
   );
