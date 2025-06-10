@@ -2,6 +2,7 @@ import type { Rendition } from "epubjs";
 import { useEffect, useRef, useState } from "react";
 import { FaBook } from "react-icons/fa6";
 import { ReactReader } from "react-reader";
+import Dictionary from "../components/Dictionary";
 
 interface EpubReaderProps {
   file: File | null;
@@ -49,14 +50,8 @@ const EpubReader = ({ file }: EpubReaderProps) => {
 
   return (
     <div className="relative h-[80vh] rounded-lg">
-      {/* Selected text display */}
-      {selectedText && (
-        <div className="absolute top-2 left-2 z-20 rounded bg-blue-50 px-3 py-1 text-sm text-blue-800 shadow">
-          {selectedText}
-        </div>
-      )}
-
       {/* Dictionary mode toggle */}
+      <Dictionary word={selectedText} />
       <div className="group absolute top-5 right-5 z-10 flex items-center space-x-2">
         <p
           className={`text-sm font-medium text-gray-600 ${dictionaryMode ? "block" : "hidden"}`}

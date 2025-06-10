@@ -10,7 +10,7 @@ const MainPage = () => {
 
         <FileUploader />
 
-        <div className="mt-10">
+        <div className="mt-96">
           <h2 className="text-3xl font-extrabold">Getting Started is Easy</h2>
           <ol className="list-decimal space-y-2 p-5 text-lg">
             <li>Click on the upload area or drag your EPUB file into it.</li>
