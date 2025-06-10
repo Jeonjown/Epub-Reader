@@ -9,8 +9,8 @@ interface DictionaryProps {
 const Dictionary = ({ word }: DictionaryProps) => {
   const {
     data: entries,
-    loading,
-    error,
+    // loading,
+    // error,
   } = useFetchMeaning<DictionaryEntry[]>(word);
 
   useEffect(() => {
@@ -32,9 +32,9 @@ const Dictionary = ({ word }: DictionaryProps) => {
             Wiktionary
           </a>
 
+          <h3 className="text-2xl font-semibold">{word}</h3>
           {entries?.map((entry, entryIndex) => (
             <div key={entryIndex}>
-              <h3 className="text-2xl font-semibold">{word}</h3>
               {entry.meanings.map((meaning, meaningIndex) => (
                 <div className="mt-2">
                   <p key={meaningIndex} className="text-gray-700">
