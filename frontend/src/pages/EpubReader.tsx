@@ -9,10 +9,10 @@ interface EpubReaderProps {
 }
 
 const EpubReader = ({ file }: EpubReaderProps) => {
-  const [location, setLocation] = useState<string | number>(0);
+  const [location, setLocation] = useState<string>("");
   const [buffer, setBuffer] = useState<ArrayBuffer | null>(null);
 
-  const [bookmarkMode, setBookmarkMode] = useState(false);
+  const [, setBookmarkMode] = useState(false);
   const [dictionaryMode, setDictionaryMode] = useState(false);
   const [selectedText, setSelectedText] = useState("");
   const renditionRef = useRef<Rendition | null>(null);
@@ -56,7 +56,7 @@ const EpubReader = ({ file }: EpubReaderProps) => {
         <FaBookBookmark
           className={`opacity-15 transition-transform hover:scale-110 hover:cursor-pointer hover:opacity-100`}
           onClick={() => {
-            const bookmark = localStorage.getItem("bookmark-location");
+            const bookmark = localStorage.getItem("bookmark-location") ?? "";
             setLocation(bookmark);
           }}
         />
