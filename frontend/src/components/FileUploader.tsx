@@ -41,9 +41,12 @@ const FileUploader = () => {
 
   return (
     <>
-      <div>
-        {file && <EpubReader file={file} />}
+      {file && <EpubReader file={file} />}
+      <h1 className="mt-10 text-center text-5xl font-extrabold">
+        Online EPUB Reader
+      </h1>
 
+      <div className="mt-5 px-10">
         <div
           className={`${isDragging ? "border-blue-500" : "border-gray-300"} mt-10 border-2 border-dashed p-5`}
         >
@@ -67,7 +70,6 @@ const FileUploader = () => {
 
             if (file) {
               setFile(file);
-              console.log(file);
             }
           }}
           className="hidden"

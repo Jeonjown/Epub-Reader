@@ -3,15 +3,15 @@ import { useFetchMeaning } from "../hooks/useFetchMeaning";
 import type { DictionaryEntry } from "../types";
 
 interface DictionaryProps {
-  word: string;
+  selectedText: string;
 }
 
-const Dictionary = ({ word }: DictionaryProps) => {
+const Dictionary = ({ selectedText }: DictionaryProps) => {
   const {
     data: entries,
     // loading,
     // error,
-  } = useFetchMeaning<DictionaryEntry[]>(word);
+  } = useFetchMeaning<DictionaryEntry[]>(selectedText);
 
   useEffect(() => {
     console.log(entries);
@@ -19,7 +19,7 @@ const Dictionary = ({ word }: DictionaryProps) => {
 
   return (
     <>
-      {word && (
+      {selectedText && (
         <div className="">
           <h2 className="text-2xl font-semibold text-gray-600">Dictionary</h2>
           <span className="text-sm">definition from: </span>
@@ -32,7 +32,7 @@ const Dictionary = ({ word }: DictionaryProps) => {
             Wiktionary
           </a>
 
-          <h3 className="text-2xl font-semibold">{word}</h3>
+          <h3 className="text-2xl font-semibold">{selectedText}</h3>
           {entries?.map((entry, entryIndex) => (
             <div key={entryIndex}>
               {entry.meanings.map((meaning, meaningIndex) => (
