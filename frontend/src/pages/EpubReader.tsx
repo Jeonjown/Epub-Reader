@@ -1,8 +1,9 @@
 import type { Rendition } from "epubjs";
 import { useEffect, useRef, useState } from "react";
-import { FaBook, FaBookBookmark, FaBookmark } from "react-icons/fa6";
+import { FaBook, FaBookBookmark } from "react-icons/fa6";
 import { ReactReader } from "react-reader";
 import Dictionary from "../components/Dictionary";
+import Bookmark from "../components/Bookmark";
 
 interface EpubReaderProps {
   file: File | null;
@@ -11,10 +12,6 @@ interface EpubReaderProps {
 const EpubReader = ({ file }: EpubReaderProps) => {
   const [location, setLocation] = useState<string | number>(0);
   const [buffer, setBuffer] = useState<ArrayBuffer | null>(null);
-
-  const [bookmarkLocation, setBookmarkLocation] = useState<string>(
-    () => localStorage.getItem("bookmark-location") || "",
-  );
 
   const [dictionaryMode, setDictionaryMode] = useState(false);
   const [selectedText, setSelectedText] = useState("");
@@ -86,23 +83,7 @@ const EpubReader = ({ file }: EpubReaderProps) => {
             Dictionary Mode
           </span>
         </div>
-
-        <FaBookmark
-          size={22}
-          className={`cursor-pointer transition-transform hover:scale-110 ${
-            bookmarkLocation === String(location) ? "opacity-100" : "opacity-20"
-          } `}
-          onClick={() => {
-            if (location === bookmarkLocation) {
-              localStorage.removeItem("bookmark-location");
-              setBookmarkLocation("");
-            } else if (location) {
-              const loc = String(location);
-              localStorage.setItem("bookmark-location", loc);
-              setBookmarkLocation(loc);
-            }
-          }}
-        />
+        <Bookmark location={location} />
       </div>
 
       {/* EPUB Reader */}
