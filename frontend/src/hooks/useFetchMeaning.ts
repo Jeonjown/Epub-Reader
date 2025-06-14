@@ -18,8 +18,11 @@ export const useFetchMeaning = <T>(word: string) => {
         const result = await fetchMeaning<T>(word);
         setData(result);
       } catch (err) {
-        console.error(err);
-        setError("Something went wrong while fetching the meaning.");
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Unknown error occurred.");
+        }
       } finally {
         setLoading(false);
       }
