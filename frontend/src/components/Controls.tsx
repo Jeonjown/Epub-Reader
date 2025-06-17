@@ -20,19 +20,18 @@ const Controls: React.FC<ControlsProps> = ({
   dictionaryMode,
   setDictionaryMode,
 }) => (
-  <div className="px-10">
-    <div className="absolute top-4 left-12 z-10">
-      <BookmarkListIcon setLocation={setLocation} />
-    </div>
-
+  <div className="">
     <div className="absolute top-4 right-5 z-10 flex items-center">
       <div className="flex space-x-2">
+        {dictionaryMode && (
+          <p className="font-semibold text-gray-500">Highlight a text</p>
+        )}
         <DictionaryIcon
           setSelectedText={setSelectedText}
           setDictionaryMode={setDictionaryMode}
           dictionaryMode={dictionaryMode}
         />
-
+        <BookmarkListIcon setLocation={setLocation} />
         <BookmarkIcon location={location} />
       </div>
     </div>

@@ -1,4 +1,4 @@
-- [x] add error when dictionary not found
-- [x] add a dialog box for dictionary entry
-- [x] when no bookmark it should alert if bookmark is not found
+- [ ] improve ui
+
+- [ ] todos
 - [ ] todos

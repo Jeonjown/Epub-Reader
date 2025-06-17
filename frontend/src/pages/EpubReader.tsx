@@ -5,6 +5,7 @@ import useDictionary from "../hooks/useDictionary";
 import useEpubReader from "../hooks/useEpubReader";
 import Controls from "../components/Controls";
 import { useEffect } from "react";
+import { myReaderStyles } from "../hooks/readerStyles";
 
 interface EpubReaderProps {
   file: File | null;
@@ -48,7 +49,7 @@ const EpubReader = ({ file }: EpubReaderProps) => {
     };
   }, [setLocation]);
   return (
-    <div className="relative mb-20 h-[85vh] rounded-lg">
+    <div className="relative mb-40 h-[85vh] rounded-lg">
       {/* Dictionary mode toggle */}
       {dictionaryMode && (
         <Dictionary
@@ -74,6 +75,7 @@ const EpubReader = ({ file }: EpubReaderProps) => {
           location={location}
           locationChanged={(epubcfi: string) => setLocation(epubcfi)}
           pageTurnOnScroll={true}
+          readerStyles={myReaderStyles}
           epubOptions={{
             allowPopups: true,
             allowScriptedContent: true,
