@@ -23,7 +23,7 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ## 🚀 Demo
 
-![EPUB Demo](assets/Epub-Demo.gif)
+![EPUB Demo](frontend/src/assets/Epub-Demo.gif)
 
 ---
 
