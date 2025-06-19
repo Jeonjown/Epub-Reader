@@ -6,39 +6,39 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ## 🗂 Table of Contents
 
-- [Demo](#-demo)  
-- [Features](#-features)  
-- [Tech Stack](#-tech-stack)  
-- [Getting Started](#-getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)  
-- [Project Structure](#-project-structure)  
-- [Styling & Theming](#-styling--theming)  
-- [API Integration](#-api-integration)  
-- [Contributing](#-contributing)  
-- [License](#-license)  
+- [Demo](#-demo)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+- [Project Structure](#-project-structure)
+- [Styling & Theming](#-styling--theming)
+- [API Integration](#-api-integration)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
 ## 🚀 Demo
 
-> *Insert a GIF or screenshot here demonstrating drag‑and‑drop and in‑reader dictionary look‑up.*
+![EPUB Demo](assets/Epub-Demo.gif)
 
 ---
 
 ## ✨ Features
 
 - **Drag & Drop / File Select**  
-  Instantly load any `.epub` file by dragging it onto the page or by clicking “Choose File.”  
+  Instantly load any `.epub` file by dragging it onto the page or by clicking “Choose File.”
 - **Two‑Column Desktop Layout**  
-  Paginated, side‑by‑side columns on wide screens; single column with continuous scroll on mobile.  
+  Paginated, side‑by‑side columns on wide screens; single column with continuous scroll on mobile.
 - **Inline Dictionary Lookup**  
-  Select any word in the text to see definitions powered by [DictionaryAPI.dev](https://dictionaryapi.dev/).  
+  Select any word in the text to see definitions powered by [DictionaryAPI.dev](https://dictionaryapi.dev/).
 - **Customizable Reader Styles**  
-  Override `react-reader`’s default look via `myReaderStyles` (colors, borders, shadows, etc.).  
+  Override `react-reader`’s default look via `myReaderStyles` (colors, borders, shadows, etc.).
 - **Responsive & Accessible**  
-  Mobile‑first design, keyboard‑navigable controls, and ARIA‑friendly markup.  
+  Mobile‑first design, keyboard‑navigable controls, and ARIA‑friendly markup.
 - **Header & Footer**  
   Branding header plus a lightweight footer crediting the dictionary API.
 
@@ -46,12 +46,12 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ## 🧰 Tech Stack
 
-- **React** (with Hooks)  
-- **Tailwind CSS** for utility‑first styling  
-- **react-reader** for EPUB rendering  
-- **DictionaryAPI.dev** for free, open‑source definitions  
-- **react-icons** for crisp SVG icons  
-- **TypeScript** (optional)  
+- **React** (with Hooks)
+- **Tailwind CSS** for utility‑first styling
+- **react-reader** for EPUB rendering
+- **DictionaryAPI.dev** for free, open‑source definitions
+- **react-icons** for crisp SVG icons
+- **TypeScript** (optional)
 
 ---
 
@@ -59,8 +59,8 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ### Prerequisites
 
-- Node.js ≥ 16  
-- npm or Yarn  
+- Node.js ≥ 16
+- npm or Yarn
 
 ### Installation
 
@@ -68,3 +68,4 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
    ```bash
    git clone https://github.com/<your‑username>/Epub-Reader.git
    cd Epub-Reader/frontend
+   ```
