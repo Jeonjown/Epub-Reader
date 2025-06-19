@@ -6,8 +6,8 @@ const Header = () => {
       <header className="border-b-1 border-gray-200 px-5 py-2">
         <div className="flex justify-between">
           <div className="text-center">
-            <FaGlasses size={40} className="mx-auto" />
-            <p className="font-bold">EPUB READER</p>
+            <FaGlasses size={35} className="mx-auto" />
+            <p className="text-sm font-bold">EPUB READER</p>
           </div>
 
           <div className="flex items-center space-x-3">

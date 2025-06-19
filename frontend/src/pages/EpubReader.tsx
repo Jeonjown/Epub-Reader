@@ -49,7 +49,7 @@ const EpubReader = ({ file }: EpubReaderProps) => {
     };
   }, [setLocation]);
   return (
-    <div className="relative mb-40 h-[92vh] rounded-lg md:mt-5 md:h-[83vh]">
+    <div className="relative mb-40 h-[92vh] rounded-lg md:mx-5 md:h-[83vh]">
       {/* Dictionary mode toggle */}
       {dictionaryMode && (
         <Dictionary
