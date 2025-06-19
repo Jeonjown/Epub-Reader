@@ -1,24 +1,29 @@
 import { useEffect, useState } from "react";
 import EpubReader from "../pages/EpubReader";
 
-const FileUploader = () => {
+interface FileUploaderProps {
+  onFileChange?: (file: File | null) => void;
+}
+
+export default function FileUploader({ onFileChange }: FileUploaderProps) {
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
+    onFileChange?.(file);
+  }, [file, onFileChange]);
+
+  useEffect(() => {
     const handleDrop = (e: DragEvent) => {
       e.preventDefault();
-
-      const file = e.dataTransfer?.files?.[0];
-      if (!file || !file.name.toLowerCase().endsWith(".epub")) {
+      const dropped = e.dataTransfer?.files?.[0];
+      if (!dropped?.name.toLowerCase().endsWith(".epub")) {
         alert("Please drop a proper .epub file");
         return;
       }
-
-      setFile(file);
+      setFile(dropped);
       setIsDragging(false);
     };
-
     const onDragOver = (e: DragEvent) => {
       e.preventDefault();
       setIsDragging(true);
@@ -31,7 +36,6 @@ const FileUploader = () => {
     window.addEventListener("dragover", onDragOver);
     window.addEventListener("dragleave", onDragLeave);
     window.addEventListener("drop", handleDrop);
-
     return () => {
       window.removeEventListener("dragover", onDragOver);
       window.removeEventListener("dragleave", onDragLeave);
@@ -42,14 +46,15 @@ const FileUploader = () => {
   return (
     <>
       {file && <EpubReader file={file} />}
-      <div>
-        {" "}
+      <div className="mx-4 rounded-xl bg-white p-6 shadow-md">
         <h1 className="mt-10 text-center text-5xl font-extrabold">
           Online EPUB Reader
         </h1>
         <div className="mt-5 px-10">
           <div
-            className={`${isDragging ? "border-blue-500" : "border-gray-300"} mt-10 border-2 border-dashed p-5`}
+            className={`${
+              isDragging ? "border-blue-500" : "border-gray-300"
+            } mt-10 border-2 border-dashed p-5`}
           >
             <p className="text-center">
               {isDragging
@@ -59,28 +64,23 @@ const FileUploader = () => {
           </div>
           <label
             htmlFor="fileInput"
-            className="hover:bg-background mx-auto mt-5 block max-w-50 border-2 px-4 py-2 text-center hover:cursor-pointer"
+            className="mx-auto mt-5 block max-w-50 border-2 px-4 py-2 text-center hover:cursor-pointer hover:bg-gray-100"
           >
             Choose an EPUB file
           </label>
           <input
+            id="fileInput"
             type="file"
             accept=".epub"
             onChange={(e) => {
-              const file = e.target.files?.[0];
-
-              if (file) {
-                setFile(file);
-              }
+              const chosen = e.target.files?.[0];
+              if (chosen) setFile(chosen);
             }}
             className="hidden"
-            id="fileInput"
           />
           <p className="mt-2 text-sm text-gray-500">{file?.name}</p>
         </div>
       </div>
     </>
   );
-};
-
-export default FileUploader;
+}

@@ -41,7 +41,7 @@ const Dictionary = ({ selectedText, dictionaryMode }: DictionaryProps) => {
   return (
     <>
       {/* Overlay */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-3">
         {/* Modal Box */}
         <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-white p-6 shadow-xl">
           {/* Close Button */}

@@ -15,6 +15,7 @@ export const myReaderStyles: IReactReaderStyle = {
 
   container: {
     ...ReactReaderStyle.container,
+
     // backgroundColor: "#704214",
     // padding: "1.5rem",
     // borderRadius: "8px",
@@ -36,17 +37,14 @@ export const myReaderStyles: IReactReaderStyle = {
 
   reader: {
     ...ReactReaderStyle.reader,
-    backgroundColor: "#FAF9F6",
-    // border: "1px solid black",
-    borderRadius: "2px",
-    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    padding: "2em",
   },
 
   readerArea: {
     ...ReactReaderStyle.readerArea,
-
-    // backgroundColor: "#0000FF",
+    // backgroundColor: "#FAF9F6",
+    border: "1px solid ",
+    borderColor: "#e5e7eb",
+    borderRadius: "3px",
   },
 
   titleArea: {
