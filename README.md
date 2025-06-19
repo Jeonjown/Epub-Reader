@@ -4,7 +4,7 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ---
 
-## 🗂 Table of Contents
+## Table of Contents
 
 - [Demo](#-demo)
 - [Features](#-features)
@@ -21,13 +21,13 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ---
 
-## 🚀 Demo
+## Demo
 
 ![EPUB Demo](frontend/src/assets/Epub-Demo.gif)
 
 ---
 
-## ✨ Features
+## Features
 
 - **Drag & Drop / File Select**  
   Instantly load any `.epub` file by dragging it onto the page or by clicking “Choose File.”
@@ -44,7 +44,7 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **React** (with Hooks)
 - **Tailwind CSS** for utility‑first styling
@@ -55,7 +55,7 @@ A browser‑based EPUB reader built with React, Tailwind CSS, and [react‑reade
 
 ---
 
-## 🛠 Getting Started
+## Getting Started
 
 ### Prerequisites
 
