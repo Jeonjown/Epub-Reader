@@ -12,7 +12,7 @@ const Header = () => {
 
           <div className="flex items-center space-x-3">
             <a
-              href="https://github.com/Jeonjown"
+              href="https://github.com/Jeonjown/Epub-Reader"
               target="_blank"
               rel="noopener noreferrer"
             >
