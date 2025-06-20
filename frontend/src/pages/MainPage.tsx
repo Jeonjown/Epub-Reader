@@ -8,7 +8,7 @@ export default function MainPage() {
   const mobilePadding = file ? "" : "pt-10";
 
   return (
-    <div className={`min-h-screen bg-gray-50 ${mobilePadding} md:pt-10`}>
+    <div className={`min-h-screen bg-gray-200 ${mobilePadding} md:pt-10`}>
       <div className="mx-auto max-w-5xl space-y-10">
         <FileUploader onFileChange={setFile} />
 
@@ -27,7 +27,7 @@ export default function MainPage() {
           </ol>
         </div>
 
-        <div className="mx-4 rounded-xl bg-white p-8 shadow-md">
+        <div className="mx-4 mb-20 rounded-xl bg-white p-8 shadow-md">
           <div className="mb-4 flex items-center space-x-4 text-3xl font-bold text-gray-700">
             <MdLightbulb />
             <h2>Why Use This Reader?</h2>

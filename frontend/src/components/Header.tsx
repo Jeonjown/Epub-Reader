@@ -3,7 +3,7 @@ import { FaGithub, FaGlasses } from "react-icons/fa6";
 const Header = () => {
   return (
     <>
-      <header className="border-b-1 border-gray-200 px-5 py-2">
+      <header className="border-b-1 border-gray-300 bg-white px-5 py-2">
         <div className="flex justify-between">
           <div className="text-center">
             <FaGlasses size={35} className="mx-auto" />

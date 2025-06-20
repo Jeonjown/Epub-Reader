@@ -5,9 +5,12 @@ import MainPage from "./pages/MainPage";
 function App() {
   return (
     <>
-      <Header />
-      <MainPage />
-      <Footer />
+      <div className="bg-gray-200">
+        <Header />
+
+        <MainPage />
+        <Footer />
+      </div>
     </>
   );
 }
